@@ -1,4 +1,4 @@
-package cloudcode.guestbook.frontend;
+package gsucode.gwpattern.backend;
 
 /**
  * defines the data associated with a single guest book entry

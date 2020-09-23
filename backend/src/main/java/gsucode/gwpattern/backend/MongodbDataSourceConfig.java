@@ -1,4 +1,4 @@
-package cloudcode.guestbook.backend;
+package gsucode.gwpattern.backend;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration;

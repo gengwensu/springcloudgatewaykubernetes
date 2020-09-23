@@ -1,4 +1,4 @@
-package cloudcode.guestbook.backend;
+package gsucode.gwpattern.backend;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
