@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-guestbook-gateway
+  labels:
+    app: java-guestbook
+    tier: gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: java-guestbook
+      tier: gateway
+  template:
+    metadata:
+      labels:
+        app: java-guestbook
+        tier: gateway
+    spec:
+      containers:
+      - name: gateway
+        image: java-guestbook-gateway
+        ports:
+          - name: http-server
+            containerPort: 8080
+#        livenessProbe:
+#          httpGet:
+#            path: /actutator/health
+#            port: 8080
+#          initialDelaySeconds: 30
+#          periodSeconds: 15
+#          timeoutSeconds: 10
+        env:
+#          - name: PORT
+#            value: "8080"
+          - name: JAVA_TOOL_OPTIONS
+            value: -agentlib:jdwp=transport=dt_socket,server=y,address=5005,suspend=n,quiet=y
+

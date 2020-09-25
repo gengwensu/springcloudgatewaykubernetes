@@ -1,0 +1,38 @@
+spring:
+  application.name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: frontend
+          uri: http://java-guestbook-frontend:8081
+          predicates:
+            - Path=/,/post
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+          url-expression: "'http://'+serviceId"
+#    kubernetes:
+#      reload:
+#        enabled: true
+#        mode: polling
+#        period: 5000
+#      discovery:
+#        filter: "metadata.labels['s1p']"
+
+logging:
+  level:
+    org.springframework.cloud.gateway: TRACE
+    org.springframework.cloud.loadbalancer: TRACE
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      enabled: true
+    restart:
+      enabled: true
+    info:
+      enabled: true

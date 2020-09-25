@@ -11,5 +11,5 @@ spec:
     app: java-guestbook
     tier: backend
   ports:
-  - port: 8080
+  - port: 8082
     targetPort: http-server

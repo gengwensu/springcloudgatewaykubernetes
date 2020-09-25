@@ -13,4 +13,6 @@ target
 .project
 .settings
 
-.idea/uiDesigner.xml
+/.idea/
+/.mvn/
+/.vscode/

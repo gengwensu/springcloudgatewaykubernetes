@@ -22,12 +22,12 @@ spec:
         image: java-guestbook-frontend
         ports:
         - name: http-server
-          containerPort: 8080
+          containerPort: 8081
         env:
         - name: PORT
-          value: "8080"
+          value: "8081"
         - name: GUESTBOOK_API_ADDR
-          value: java-guestbook-backend:8080
+          value: java-guestbook-backend:8082
         # This environment variable enables debugging support for the container.
         # Remove this to disable the debug build.
         - name: JAVA_TOOL_OPTIONS
