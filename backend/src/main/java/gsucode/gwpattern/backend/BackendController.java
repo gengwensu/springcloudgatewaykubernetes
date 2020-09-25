@@ -1,9 +1,6 @@
 package gsucode.gwpattern.backend;
 
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -14,6 +11,7 @@ import java.util.List;
  * defines the REST endpoints managed by the server.
  */
 @RestController
+@RequestMapping("/backend")
 public class BackendController {
 
     @Autowired private MessageRepository repository;

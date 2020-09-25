@@ -18,6 +18,7 @@ import org.springframework.web.client.RestTemplate;
  * defines the REST endpoints managed by the server.
  */
 @Controller
+@RequestMapping("/frontend")
 public class FrontendController {
 
     private String backendUri = String.format("http://%s/messages",

@@ -4,13 +4,13 @@ spring:
     gateway:
       routes:
         - id: frontend
-          uri: http://java-guestbook-frontend:8081
+          uri: http://java-guestbook-frontend:8081/frontend
           predicates:
-            - Path=/,/post
+            - Path=/,/frontend,/frontend/post
         - id: backend
-          uri: http://java-guestbook-backend:8082
+          uri: http://java-guestbook-backend:8082/backend
           predicates:
-            - Path=/messages
+            - Path=/backend/messages
       discovery:
         locator:
           enabled: true
