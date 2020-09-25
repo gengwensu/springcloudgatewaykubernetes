@@ -7,11 +7,15 @@ spring:
           uri: http://java-guestbook-frontend:8081
           predicates:
             - Path=/,/post
+        - id: backend
+          uri: http://java-guestbook-backend:8082
+          predicates:
+            - Path=/messages
       discovery:
         locator:
           enabled: true
           lowerCaseServiceId: true
-          url-expression: "'http://'+serviceId"
+#          url-expression: "'http://'+serviceId"
 #    kubernetes:
 #      reload:
 #        enabled: true
