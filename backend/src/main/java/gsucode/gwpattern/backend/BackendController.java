@@ -11,7 +11,7 @@ import java.util.List;
  * defines the REST endpoints managed by the server.
  */
 @RestController
-@RequestMapping("/backend")
+/*@RequestMapping("/backend")*/
 public class BackendController {
 
     @Autowired private MessageRepository repository;

@@ -4,13 +4,13 @@ spring:
     gateway:
       routes:
         - id: frontend
-          uri: http://java-guestbook-frontend:8081/frontend
+          uri: http://java-guestbook-frontend:8081
           predicates:
-            - Path=/,/frontend,/frontend/post
+            - Path=/,/post
         - id: backend
-          uri: http://java-guestbook-backend:8082/backend
+          uri: http://java-guestbook-backend:8082
           predicates:
-            - Path=/backend/messages
+            - Path=/messages
       discovery:
         locator:
           enabled: true
@@ -27,6 +27,7 @@ spring:
 logging:
   level:
     org.springframework.cloud.gateway: TRACE
+    reactor.netty: TRACE
     org.springframework.cloud.loadbalancer: TRACE
 management:
   endpoints:
